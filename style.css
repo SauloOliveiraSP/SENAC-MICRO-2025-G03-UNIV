@@ -1,0 +1,119 @@
+/* Remover a margem e o scroll */
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    overflow: hidden; /* Isso remove qualquer scroll */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+/* Container principal */
+.login-container {
+    display: flex;
+    width: 100%; /* 100% da largura da tela */
+    height: 100%; /* 100% da altura da tela */
+    justify-content: space-between; /* Garante que as áreas fiquem separadas */
+}
+
+/* Contêiner da imagem, ocupa metade da largura */
+.image-container {
+    width: 50%; /* 50% da largura da tela */
+    height: 100%; /* A altura é 100% */
+    overflow: hidden; /* Garante que nada ultrapasse os limites */
+}
+
+/* Imagem ocupa 100% da largura do container */
+.image-login {
+    width: 100%;
+    height: 100%; /* A imagem ocupa 100% da altura do container */
+    object-fit: cover; /* A imagem preenche completamente o container, mantendo a proporção */
+}
+
+/* Contêiner para as opções */
+.options-container {
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna (um embaixo do outro) */
+    align-items: center;
+    justify-content: center;
+    width: 50%; /* Ocupa os outros 50% da tela */
+    padding-left: 10px; /* Espaço entre a imagem e o conteúdo */
+    height: 100%; /* Para que o conteúdo ocupe toda a altura */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse */
+    font-family: "Century Gothic", sans-serif;
+    font-size: 8px; /* Ajustado para um tamanho de fonte mais visível */
+    color: #2b5c8a;
+    text-align: center; /* Garante que o texto fique centralizado */
+}
+
+/* Ajuste na imagem do cabeçalho */
+.image-read {
+    width: 4em; /* Aumenta o tamanho da imagem para maior visibilidade */
+    margin-bottom: 10px; /* Espaço entre a imagem do cabeçalho e o título */
+}
+
+/* Ajuste no título do login */
+.titulo-login {
+    font-size: 8px; /* Tamanho maior para o título */
+    margin-bottom: 20px; /* Espaço entre o título e o próximo item */
+}
+
+/* Remove bordas e adiciona fundo cinza claro */
+.options-container input {
+    width: 18em;
+    padding: 2px 2px 2px 8px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    border: 1px; /* Remove todas as bordas */
+    border-radius: none; /* Adiciona bordas arredondadas (opcional) */
+    font-size: 3px; /* Ajuste o tamanho da fonte */
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    outline: none; /* Remove o contorno de foco */
+}
+
+.user-input {
+    background-image: url('./images/user.png') !important; /* Caminho da imagem de usuário */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-position: 1px center; /* Posiciona a imagem à esquerda */
+    background-size: 5px 5px; /* Ajusta o tamanho da imagem */
+}
+
+.password-input {
+    background-image: url('./images/password.png') !important; /* Caminho da imagem de usuário */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    background-position: 1px center; /* Posiciona a imagem à esquerda */
+    background-size: 5px 5px; /* Ajusta o tamanho da imagem */
+}
+
+
+/* Personaliza o estilo quando o input for focado */
+.options-container input:focus {
+    background-color: #e0e0e0; /* Leve alteração na cor de fundo quando o input for focado */
+    box-shadow: none; /* Remove qualquer sombra de foco */
+}
+
+/* Estilo do botão */
+.login-btn {
+    width: 50px; /* A mesma largura do input */
+    padding: 2px; /* O mesmo espaçamento interno do input */
+    margin-top: 4em;
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Borda arredondada, igual ao input */
+    font-size: 3px; /* Ajuste do tamanho da fonte */
+    background-color: #2b5c8a; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    cursor: pointer; /* Muda o cursor quando passa por cima */
+    outline: none; /* Remove o contorno de foco */
+    text-align: center; /* Garante que o texto fique centralizado */
+}   
+
+/* Efeito quando o botão é clicado (hover) */
+.login-btn-btn:hover {
+    background-color: #1d457a; /* Altere a cor ao passar o mouse por cima */
+}
+
+.text-register {
+    margin-top: 4px;
+    font-size: 3px;
+}
