@@ -50,7 +50,7 @@ body {
 /* Ajuste na imagem do cabeçalho */
 .image-read {
     width: 10em; /* Aumenta o tamanho da imagem para maior visibilidade */
-    margin-bottom: 10px; /* Espaço entre a imagem do cabeçalho e o título */
+    margin-bottom: 3em; /* Espaço entre a imagem do cabeçalho e o título */
 }
 
 /* Ajuste no título do login */
