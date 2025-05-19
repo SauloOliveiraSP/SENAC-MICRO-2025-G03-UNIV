@@ -1,29 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./images/logo-white.png" type="image/png">
-
+    <link rel="icon" href="./images/logo-white.png" type="image/png" />
+    <!-- CDN do Toastify -->
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet" />
     <title>Login - Senac App</title>
 </head>
-
 <body>
     <div class="login-container">
         <div class="image-container">
-            <img class="image-login" src="./images/image-1.png" >
+            <img class="image-login" src="./images/image-1.png" />
         </div>
         <div class="options-container">
-           <div class="titulo-login"><b>Centro Universitário SENAC</b></div>
-           <img class="image-read" src="./images/logo-white.png">
-           <input class="user-input" placeholder="Digite seu nome">
-           <input class="password-input" placeholder="Senha">
-           <button class="login-btn">Login</button>
-           <div class="text-register"><b>Regitrar-se</b></div>
+            <div class="titulo-login"><b>Centro Universitário SENAC</b></div>
+            <img class="image-read" src="./images/logo-white.png" />
+            <input class="user-input" placeholder="Digite seu nome" id="username" />
+            <input class="password-input" placeholder="Senha" type="password" id="password" />
+            <button class="login-btn" onclick="login()">Login</button>
+            <div class="text-register"><b>Registrar-se</b></div>
         </div>
     </div>
-</body>
 
+    <!-- CDN do Toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
+
+    <script>
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            fetch("http://127.0.0.1:5000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Usando Toastify para exibir a mensagem
+                if (data.status === "success") {
+                    Toastify({
+                        text: data.message,
+                        backgroundColor: "green", // Cor para o sucesso
+                        duration: 3000, // Tempo de exibição (3 segundos)
+                        gravity: "top", // Posicionamento no topo
+                        position: "center", // Posição centralizada
+                        stopOnFocus: true, // Para a animação ao interagir
+                    }).showToast();
+                } else {
+                    Toastify({
+                        text: data.message,
+                        backgroundColor: "red", // Cor para erro
+                        duration: 3000, // Tempo de exibição (3 segundos)
+                        gravity: "top", // Posicionamento no topo
+                        position: "center", // Posição centralizada
+                        stopOnFocus: true, // Para a animação ao interagir
+                    }).showToast();
+                }
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+                Toastify({
+                    text: "Erro ao conectar com a API.",
+                    backgroundColor: "red", // Cor para erro de conexão
+                    duration: 3000, // Tempo de exibição (3 segundos)
+                    gravity: "top", // Posicionamento no topo
+                    position: "center", // Posição centralizada
+                    stopOnFocus: true, // Para a animação ao interagir
+                }).showToast();
+            });
+        }
+    </script>
+</body>
 </html>
