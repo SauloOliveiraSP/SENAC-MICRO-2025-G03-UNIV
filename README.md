@@ -1,8 +1,8 @@
 # SenacAppPrototype
 
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
-uvicorn main:app --reload
+python -m uvicorn main:app --reload
 
 user: admin
 pass: 1234
