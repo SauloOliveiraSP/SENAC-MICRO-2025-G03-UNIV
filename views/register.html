@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../images/logo-white.png" type="image/png" />
+    <!-- CDN do Toastify -->
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet" />
+    <title>Registrar - Senac App</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="image-container">
+            <img class="image-login" src="../images/image-1.png" alt="" />
+        </div>
+        <div class="options-container">
+            <div class="titulo-login"><b>Centro Universitário SENAC</b></div>
+            <img class="image-read" src="../images/logo-white.png" alt="" />
+
+            <input class="user-input" placeholder="Digite seu nome" id="username" />
+            <input class="email-input" placeholder="Digite seu e-mail" type="email" id="email" />
+            <input class="cpf-input" placeholder="Digite seu CPF" id="cpf" />
+            <input class="cep-input" placeholder="Digite seu CEP" id="cep" />
+            <input class="password-input" placeholder="Senha" type="password" id="password" />
+            <input class="password-input" placeholder="Confirme a senha" type="password" id="confirm-password" />
+
+            <button class="login-btn" onclick="register()">Registrar</button>
+
+            <div class="text-register"><b>Já tem uma conta? <a href="login.html"
+                        style="text-decoration:none; color:#2b5c8a; text-decoration: underline;">Login</a></b></div>
+        </div>
+    </div>
+
+    <!-- CDN do Toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
+    <!-- IMask para máscara -->
+    <script src="https://unpkg.com/imask"></script>
+    <script src="../scripts/register.js"></script>
+
+    <script>
+        // Aplica máscara no CPF (000.000.000-00)
+        var cpfElement = document.getElementById('cpf');
+        var cpfMask = IMask(cpfElement, {
+            mask: '000.000.000-00'
+        });
+
+        // Aplica máscara no CEP (00000-000)
+        var cepElement = document.getElementById('cep');
+        var cepMask = IMask(cepElement, {
+            mask: '00000-000'
+        });
+    </script>
+</body>
+
+</html>

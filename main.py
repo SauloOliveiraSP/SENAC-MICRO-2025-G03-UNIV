@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from login import login_router
-from register import register_router
+from service.login import login_router
+from service.register import register_router
 
 app = FastAPI()
 
