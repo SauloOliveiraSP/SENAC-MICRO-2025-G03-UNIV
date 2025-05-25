@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../images/logo-white.png" type="image/png" />
+    <!-- CDN do Toastify -->
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet" />
+    <title>Login - Senac App</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="image-container">
+            <img class="image-login" src="../images/image-1.png" alt="" />
+        </div>
+        <div class="options-container">
+            <div class="titulo-login"><b>Centro Universitário SENAC</b></div>
+            <img class="image-read" src="../images/logo-white.png" alt="">
+            <input class="user-input" placeholder="Digite seu nome" id="username" />
+            <input class="password-input" placeholder="Senha" type="password" id="password" />
+            <button class="login-btn" onclick="login()">Login</button>
+            <div class="text-register">
+                <b><a href="register.html"
+                        style="text-decoration:none; color:#2b5c8a; text-decoration: underline;">Registrar-se</a></b>
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- CDN do Toastify -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.js"></script>
+    <script src="../scripts/login.js"></script>
+</body>
+
+</html>

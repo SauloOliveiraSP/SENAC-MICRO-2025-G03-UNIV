@@ -73,19 +73,18 @@ body {
 }
 
 .user-input {
-    background-image: url('./images/user.png') !important; /* Caminho da imagem de usuário */
+    background-image: url('images/user.png') !important; /* Caminho da imagem de usuário */
     background-repeat: no-repeat; /* Não repete a imagem */
     background-position: 3px center; /* Posiciona a imagem à esquerda */
     background-size: 1.2em; /* Ajusta o tamanho da imagem */
 }
 
 .password-input {
-    background-image: url('./images/password.png') !important; /* Caminho da imagem de usuário */
+    background-image: url('images/password.png') !important; /* Caminho da imagem de usuário */
     background-repeat: no-repeat; /* Não repete a imagem */
     background-position: 3px center; /* Posiciona a imagem à esquerda */
     background-size: 1.2em; /* Ajusta o tamanho da imagem */
 }
-
 
 /* Personaliza o estilo quando o input for focado */
 .options-container input:focus {
