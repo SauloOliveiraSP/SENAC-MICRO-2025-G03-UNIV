@@ -4,7 +4,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from service.login import login_router
 from service.register import register_router
 
-app = FastAPI()
+app = FastAPI(
+    title="API de Matricula",  # Nome exibido no Swagger
+    description="",  # Descrição opcional
+    version="1.0.0",                             # Versão da API
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -14,5 +18,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(login_router)
-app.include_router(register_router)
+app.include_router(login_router, tags=["Autenticação"])
+app.include_router(register_router, tags=["Cadastro"])
